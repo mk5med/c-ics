@@ -8,7 +8,7 @@ struct ical_s
   FILE *instream;
 };
 
-struct VEVENT_s
+struct VEVENT
 {
   /* Required */
   time_t dtstamp;
@@ -57,8 +57,10 @@ struct VEVENT_s
   //                 contact / exdate / rstatus / related /
   //                 resources / rdate / x-prop / iana-prop
 };
+
+typedef struct VEVENT VEVENT_s;
 int init_ical(struct ical_s *ical, FILE *instream);
 int consume__next_icalprop(struct ical_s *ical, char **key, char **value);
-long consume__next_icalevent(struct ical_s *ical, struct VEVENT_s *event);
-void free_VEVENT_s(struct VEVENT_s *event);
+long consume__next_icalevent(struct ical_s *ical, VEVENT_s *event);
+void free_VEVENT_s(VEVENT_s *event);
 #endif

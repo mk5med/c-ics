@@ -10,7 +10,7 @@ int init_ical(struct ical_s *ical, FILE *instream)
   return 0;
 }
 
-long consume__next_icalevent(struct ical_s *ical, struct VEVENT_s *event)
+long consume__next_icalevent(struct ical_s *ical, VEVENT_s *event)
 {
   event->attendee = calloc(2, sizeof(char *));
   struct dyn_arr attendees;
@@ -58,7 +58,7 @@ long consume__next_icalevent(struct ical_s *ical, struct VEVENT_s *event)
   return 0;
 }
 
-void free_VEVENT_s(struct VEVENT_s *event)
+void free_VEVENT_s(VEVENT_s *event)
 {
   int i = 0;
   while (event->attendee[i])
