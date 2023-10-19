@@ -15,6 +15,11 @@ OBJ = obj/main.o\
 			obj/lib/c-query.lib
 ODIR = obj
 
+TARGET=c-ics
+
+$(TARGET): $(OBJ)
+	$(CC) -g -o $@ $^ $(CFLAGS)
+
 obj/%.o: %.c $(DEPS)
 	$(CC) -g -c -o $@ $< $(CFLAGS)
 
@@ -31,13 +36,11 @@ obj/lib/c-query.lib: $(DEPS)
 obj/lib/%.o: string_extensions/%.c $(DEPS)
 	$(CC) -g -c -o $@ $< $(CFLAGS)
 
-c-ics: $(OBJ)
-	$(CC) -g -o $@ $^ $(CFLAGS)
-
 .PHONY: clean
 
 clean:
 	rm -rf $(ODIR)
+	rm -f $(TARGET)
 	cd c-query && make clean
 	# You can now run 'make init'
 

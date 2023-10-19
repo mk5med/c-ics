@@ -7,9 +7,7 @@ This project aims to provide an easy API for parsing ics files according to the 
 ## CLI
 
 ```
-./cics -h
--events List all events
--
+./c-ics -q'cal(...)'
 ```
 
 ## API
@@ -21,15 +19,11 @@ This project aims to provide an easy API for parsing ics files according to the 
 | long consume\_\_next_icalevent(struct ical_s *ical, struct VEVENT_s *event);    | Given an initialised `ical_s` struct, read the `.ics` file and return the next event.                                                        |
 | void free_VEVENT_s(struct VEVENT_s \*event);                                    | Cleanup method for `VEVENT_s` in order to avoid memory leaks.                                                                                |
 
-## Build instructions
+## Dev instructions
+This project uses MAKEFILES.
 
-This program can be compiled with `build.sh`.
-
-The shell script is in this format:
-
-```bash
-gcc -g\
-  . . . main source\
-  . . . libraries\
-  -o c_ics
+```
+make clean # Cleans the repository if you have old build files
+make init # Initialised the repository for building
+make # Builds the binary
 ```
