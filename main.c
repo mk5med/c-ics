@@ -53,7 +53,12 @@ void test_ics(int argc, char **argv) {
   
   node = node->sub_attribute;
   // Open a file to read
-  FILE *file = fopen("sample.ics", "r");
+  FILE *file = fopen("np_sample.ics", "r");
+
+  if (file == NULL) {
+    printf("Error i-cal: Input file 'np_sample.ics' is null.\n");
+    exit(1);
+  }
 
   // Initialise the ical struct
   struct ical_s ical;
