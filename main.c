@@ -6,8 +6,8 @@
 #include "string_extensions/string_extensions.h"
 #include "ical/ical.h"
 #include <unistd.h>
-#include "c-query/attribute_lib/attribute_parse.h"
-#include "c-query/attribute_lib/attribute_print.h"
+#include "c-query/lib/attribute_lib/attribute_parse.h"
+#include "c-query/lib/attribute_lib/attribute_print.h"
 
 char *getQueryFromOption(int argc, char **argv)
 {
