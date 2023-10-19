@@ -1,0 +1,3 @@
+[submodule "c-query"]
+	path = c-query
+	url = https://github.com/mk5med/c-query.git
