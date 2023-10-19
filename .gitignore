@@ -2,3 +2,5 @@
 *.dSYM
 obj/
 c-ics
+
+**/np_*
